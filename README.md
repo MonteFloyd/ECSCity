@@ -26,7 +26,7 @@ If a system is done with an entity, other relevant systems can also strip those 
 
 ### Infection System
 
-Infection system works by attaching a Infection component to an entity. This component keeps track of its own clock which kills the entity when it reaches zero. The clock is managed and monitored by the relevant 'InfectionKillingSystem' while how Infection in general spreads is handled by 'InfectionSystem'.
+Infection system works by attaching a Infection component to an entity. This component keeps track of its own clock which kills the entity when it reaches zero. The clock is managed and monitored by the relevant 'InfectionKillingSystem' while how Infection in general spreads is handled by >InfectionSystem .
 
 The feature can be further improved with the possibility of cures and such. 
 
