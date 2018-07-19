@@ -14,9 +14,11 @@ ECSCity people(tiny yellow things) currently only have homes and works, dependin
 
 ### Local avoidance
 
-Masses(people) in ECSCity uses a modified version of Unities Boid system, except they all have their own targets(home or work) and their schedule to follow. Currently there are only workers but there can be more features added in the future as ECS grows. Currently this **LocalAvoidanceSystem** puts people into cells depending on their positions(X and Z in my version) and forces them to split depending on the values given in Settings.
+Masses(people) in ECSCity uses a modified version of Unity's Boid system, except they all have their own targets(home or work) and their schedule to follow. Currently there are only workers but there can be more features added in the future as ECS grows. Currently this **LocalAvoidanceSystem** puts people into cells depending on their positions(X and Z in my version) and forces them to split depending on the values given in Settings.
 
 System is quite fast but far from optimized currently, the most obvious problem is that it runs every single fram. One future possible improvement is to split this simulation system into another world and force it to run at a a lower fps compared to rendering world.
+
+Heres a GIF showing how it works:
 
 ![LocalAvoidanceGIF](https://github.com/MonteFloyd/ECSCity/blob/master/images/ecs2.gif?raw=true)
 
@@ -25,6 +27,8 @@ System is quite fast but far from optimized currently, the most obvious problem 
 By default entities have no gravity, force attached to them unless needed. When something related to physics happen to an entitiy, like if player uses a bomb near it, then **BlowUpSystem** attaches relevant physics components the to entity and those systems start doing their job on the entity. Gravity system pulls down entity, force/velocity system applies force/velocity and collision system checks for collision.
 
 If a system is done with an entity, other relevant systems can also strip those components away and entity can revert back to their default state not affected by that physics system. This kind of flexibility is most apparent in Infection System.
+
+Heres a GIF showing how it works:
 
 ![PhysicsGIF](https://github.com/MonteFloyd/ECSCity/blob/master/images/ecs3.gif?raw=true)
 ### Infection System
